@@ -18,17 +18,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Update() {
         horizontalMovement = Input.GetAxis("Horizontal");
-    }
 
-    void FixedUpdate() {
         rb2d.velocity = new Vector2(horizontalMovement * speed, rb2d.velocity.y);
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 3) {
-            rb2d.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
             isGrounded = false;
             jumpCount++;
         } else if (isGrounded) {
             jumpCount = 0;
         }
+    }
+
+    void FixedUpdate() {
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
