@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -37,6 +38,17 @@ public class PlayerMovement : MonoBehaviour
             jumpCount++;
         } else if (isGrounded) {
             jumpCount = 0;
+        }
+
+        if (Input.GetKey(KeyCode.S)) {
+            rb2d.gravityScale = 5;
+        } else {
+            rb2d.gravityScale = 2;
+        }
+
+        if (transform.position.y <= -10) {
+            Destroy(gameObject);
+            SceneManager.LoadScene("DeathScreen");
         }
     }
 
