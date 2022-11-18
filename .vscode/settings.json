@@ -1,4 +1,4 @@
-﻿{
+{
     "files.exclude":
     {
         "**/.DS_Store":true,
@@ -47,6 +47,7 @@
         "Library/":true,
         "library/":true,
         "obj/":true,
+        "omnisharp.useModernNet": false,
         "Obj/":true,
         "ProjectSettings/":true,
         "temp/":true,

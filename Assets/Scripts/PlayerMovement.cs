@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
+    private Animator anim;
     private int wallJumpCount;
     private bool isGrounded;
     private bool isWallSliding;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         jumpCount = 0;
         wallJumpCount = 0;
+        anim = GetComponent<Animator>();
     }
 
     void Update() {
@@ -24,18 +26,17 @@ public class PlayerMovement : MonoBehaviour
 
         rb2d.velocity = new Vector2(horizontalMovement * speed, rb2d.velocity.y);
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 3) {
-            //rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
-            rb2d.velocity = new Vector2(jumpForce, jumpForce);
+            anim.SetBool("Space", true);
+        } else {
+            anim.SetBool("Space", false);
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 3) {
+            rb2d.velocity = new Vector2(0, jumpForce);
+            
             isGrounded = false;
             jumpCount++;
         } else if (isGrounded) {
             jumpCount = 0;
-        } else if (isWallSliding && Input.GetKeyDown(KeyCode.Space)) {
-            rb2d.gravityScale = 1;
-            rb2d.velocity = jumpForce * transform.up;
-            rb2d.velocity = jumpForce * transform.right;
-        } else {
-            rb2d.gravityScale = 2;
         }
     }
 
@@ -44,20 +45,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Ground") {
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Platform") {
             isGrounded = true;
-        }
-        if (collision.gameObject.tag == "Wall") {
-            isWallSliding = true; 
         }
     }
 
     void OnCollisionExit2D(Collision2D other) {
-        if (other.gameObject.tag == "Ground") {
+        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Platform") {
             isGrounded = false;
-        }
-        if (other.gameObject.tag == "Wall") {
-            isWallSliding = false; 
         }
     }
 }

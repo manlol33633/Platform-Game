@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 08a0b71fc93c90b4b995349680f5c5de
+guid: fbc002c80d30ec64d8a5b60782fa454a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,34 +116,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Unity_Assets-removebg-preview_0
+      name: Player_Animation-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 16
-        width: 154
-        height: 163
+        x: 24
+        y: 18
+        width: 58
+        height: 57
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 019492c6b406654438e1fa7cb56adae9
-      internalID: 612693623
+      spriteID: 058dfe600520a0f43abb15500625476f
+      internalID: -810737561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unity_Assets-removebg-preview_1
+      name: Player_Animation-removebg-preview_1
       rect:
         serializedVersion: 2
-        x: 206
-        y: 36
-        width: 213
-        height: 143
+        x: 128
+        y: 18
+        width: 45
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cb84424fb6ada94d8e2dffdd6fb3b84
-      internalID: 1926346600
+      spriteID: eb2e449263caf8543a1c27abbfae4368
+      internalID: 926810156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unity_Assets-removebg-preview_2
+      name: Player_Animation-removebg-preview_2
       rect:
         serializedVersion: 2
-        x: 468
-        y: 31
-        width: 282
-        height: 133
+        x: 219
+        y: 18
+        width: 30
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8caffe7782287c4fa87a378344bd2df
-      internalID: 1089574876
+      spriteID: e8688a9aead41654abee05a33241d84d
+      internalID: 1169112889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unity_Assets-removebg-preview_3
+      name: Player_Animation-removebg-preview_3
       rect:
         serializedVersion: 2
-        x: 788
-        y: 9
-        width: 171
-        height: 178
+        x: 295
+        y: 18
+        width: 16
+        height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e75b99bad5e9384383a00f9ba617edb
-      internalID: 1490278439
+      spriteID: 01e6fc5a8d4e80d4a9c6bf09a834524a
+      internalID: 950137536
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Unity_Assets-removebg-preview_2: 1089574876
-      Unity_Assets-removebg-preview_1: 1926346600
-      Unity_Assets-removebg-preview_3: 1490278439
-      Unity_Assets-removebg-preview_0: 612693623
+      Player_Animation-removebg-preview_0: -810737561
+      Player_Animation-removebg-preview_1: 926810156
+      Player_Animation-removebg-preview_3: 950137536
+      Player_Animation-removebg-preview_2: 1169112889
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
