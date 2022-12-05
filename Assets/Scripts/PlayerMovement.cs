@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     private int jumpCount;
     private float horizontalMovement;
+    private float count;
     
     void Start() {
         rb2d = GetComponent<Rigidbody2D>();
@@ -27,9 +28,11 @@ public class PlayerMovement : MonoBehaviour
 
         rb2d.velocity = new Vector2(horizontalMovement * speed, rb2d.velocity.y);
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 3) {
-            anim.SetBool("Space", true);
+            anim.SetBool("Jump", true);
+            Debug.Log("Jump");
+            count++;
         } else {
-            anim.SetBool("Space", false);
+            anim.SetBool("Jump", false);
         }
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 3) {
             rb2d.velocity = new Vector2(0, jumpForce);
@@ -50,6 +53,22 @@ public class PlayerMovement : MonoBehaviour
             Destroy(gameObject);
             SceneManager.LoadScene("DeathScreen");
         }
+
+        if (rb2d.velocity.y < -2f) {
+            anim.SetBool("Falling", true);
+        } else {
+            anim.SetBool("Falling", false);
+        }
+
+        if (horizontalMovement > 0) {
+            anim.SetBool("Right", true);
+        } else if (horizontalMovement < 0) {
+            anim.SetBool("Left", true);
+        } else {
+            anim.SetBool("Right", false);
+            anim.SetBool("Left", false);
+        }
+        Debug.Log(horizontalMovement);
     }
 
     void FixedUpdate() {
